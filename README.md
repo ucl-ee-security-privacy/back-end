@@ -9,14 +9,21 @@
 
 ## MySQL
 hostname=uclee-mysql.mysql.database.azure.com
+
 username=ie_mysql
+
 password=virmer-7fywse-wiRzut
+
 ssl-mode=require
 
 
 ## Linux
 linux-Ubuntu
+
 command=ssh -i <private key path> ie@uclee.westeurope.cloudapp.azure.com
+
 hostname=uclee.westeurope.cloudapp.azure.com
+
 username=ie
+
 password=bohfip-tevtub-8zobDa
