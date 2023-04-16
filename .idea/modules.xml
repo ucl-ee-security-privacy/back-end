@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SecurityPrivacy.iml" filepath="$PROJECT_DIR$/.idea/SecurityPrivacy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sec.iml" filepath="$PROJECT_DIR$/sec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sec.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sec.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sec.test.iml" filepath="$PROJECT_DIR$/.idea/modules/sec.test.iml" />
     </modules>
   </component>
 </project>
