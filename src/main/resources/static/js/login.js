@@ -25,13 +25,13 @@ $(function () {
 document.getElementById('loginBtn').onclick = function () {
 // function loginBtn(){
 // loginBtn.addEventListener("click", function() {
-    window.location.href = "index.html";
+//     window.location.href = "index.html";
     var input_username = document.getElementById("modlgn_username").value;
     var input_password = document.getElementById("modlgn_password").value;
 
     // ajax提交用户名+密码到后台程序
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "registerRecv.php");
+    xhr.open("GET", "http://localhost:8080/login?username=" + input_username + "&password=" + input_password);
     xhr.setRequestHeader("Content-type", "url");
     xhr.send("login?" + "username=" + input_username + "&password=" + input_password);
     xhr.onreadystatechange = function () {
