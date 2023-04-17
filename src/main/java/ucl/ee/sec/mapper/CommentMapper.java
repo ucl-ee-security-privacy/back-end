@@ -25,11 +25,11 @@ public interface CommentMapper {
     }
     )
     @Select("SELECT * FROM webcomment LIMIT ${start},${end};")
-    Comment getComment(@Param("start") int start, @Param("end") int end);
+    List<Comment> getComment(@Param("start") int start, @Param("end") int end);
 
     @ResultMap("commentList")
     @Select("SELECT * FROM webcomment LIMIT 0,100;")
-    Comment getTopComment();
+    List<Comment> getTopComment();
 
     @ResultType(Integer.class)
     @Select("SELECT posttime FROM webcomment WHERE userid=${userid};")

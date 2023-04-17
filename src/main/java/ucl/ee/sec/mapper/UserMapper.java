@@ -22,9 +22,9 @@ public interface UserMapper {
     @Select("SELECT * FROM user WHERE username=${username};")
     User getUserByUsername(@Param("username") String username);
 
-    @ResultType(String.class)
-    @Select("SELECT password FROM user WHERE username=${username};")
-    String getPasswordByUsername(@Param("username") String username);
+    @ResultType(Integer.class)
+    @Select("SELECT userid FROM user WHERE username=${username};")
+    Integer getUserIdByUsername(@Param("username") String username);
 
     //如果已经定义过@Results，可以直接用@ResultMap来调取
     @Results(
@@ -44,4 +44,8 @@ public interface UserMapper {
     @Deprecated
     @Update("UPDATE user SET username=${username} where userid=${userid};")
     int updateUsernameById(@Param("username") String username, @Param("userid") int userid);
+
+    @ResultType(User.class)
+    @Select("SELECT * FROM user WHERE username=${username} and password=${password};")
+    User getUserByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
 }

@@ -17,6 +17,7 @@ public interface ProductMapper {
     @Select("SELECT * FROM product WHERE productid=${productid};")
     Product getProductById(@Param("productid") int productid);
 
+
     @Results(
             id = "productList", value = {
             @Result(property = "productid", column = "productid"),
@@ -24,12 +25,13 @@ public interface ProductMapper {
             @Result(property = "productnum", column = "productnum")
     }
     )
-    @Select("SELECT * FROM product LIMIT 0,${num};")
-    Product getTopProduct(@Param("num") int num);
-
-    @ResultMap("productList")
     @Select("SELECT * FROM product LIMIT 0,100;")
     Product getTopProduct();
+//
+//
+//    @ResultMap("productList")
+//    @Select("SELECT * FROM product LIMIT 0,${num};")
+//    Product getTopProduct(@Param("num") int num);
 
     @ResultType(Integer.class)
     @Select("SELECT productnum FROM product WHERE productname=${productname};")
@@ -45,5 +47,5 @@ public interface ProductMapper {
     int deleteProductById(int productid);
 
     @Update("UPDATE product SET productnum=${productnum} where productid=${productid};")
-    int updateProductNumById(@Param("productnum") String productnum, @Param("productid") int productid);
+    int updateProductNumById(@Param("productid") int productid, @Param("productnum") int productnum);
 }
