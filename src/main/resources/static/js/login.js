@@ -33,7 +33,7 @@ document.getElementById('loginBtn').onclick = function () {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost:8080/login?username=" + input_username + "&password=" + input_password);
     xhr.setRequestHeader("Content-type", "url");
-    xhr.send("login?" + "username=" + input_username + "&password=" + input_password);
+    xhr.send("login?" + "username=\"" + input_username + "\"&password=" + input_password);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var res = xhr.responseText;
