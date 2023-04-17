@@ -38,7 +38,7 @@ public class CommentController {
         if (session.getAttribute("user") != null) {
             User user = (User) session.getAttribute("user");
             Comment comment = new Comment();
-            comment.setUserId(user.getId());
+            comment.setUserId(user.getUserid());
             comment.setContent((String) submitObject.getMember("content"));
             comment.setPostTime(Timestamp.valueOf((String) submitObject.getMember("posttime")));
             commentMapper.insertComment(comment);

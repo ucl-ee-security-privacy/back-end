@@ -13,7 +13,7 @@ import java.sql.Date;
 @NoArgsConstructor
 public class User {
 
-    private int id;
+    private int userid;
     private String username;
     private String password;
     private String nickname;

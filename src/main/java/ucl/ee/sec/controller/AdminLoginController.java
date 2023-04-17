@@ -52,7 +52,7 @@ public class AdminLoginController {
         }
         uidJSON.put("status", 1);
         User uidSession = (User) session.getAttribute("user");
-        uidJSON.put("userid", uidSession.getId());
+        uidJSON.put("userid", uidSession.getUserid());
         return uidJSON;
     }
 
