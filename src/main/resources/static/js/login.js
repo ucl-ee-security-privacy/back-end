@@ -36,15 +36,15 @@ document.getElementById('loginBtn').onclick = function () {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var res = xhr.responseText;
-            // 后台响应成功则跳转到登录页面
+            // 后台响应成功则跳转到登录页
 
-            if (JSON.parse(res).status === 1) {
+            if (res.status === 1) {
                 // alert("注册成功");
                 $.removeCookie('userid', {path: '/'})
                 $.cookie('userid', res.userid, {expires: 7, path: '/'});
                 window.location.href = "index.html";
             } else {
-                alert(res + "hahaha");
+                alert(res+res.status+input_username+input_password);
 
             }
         }
