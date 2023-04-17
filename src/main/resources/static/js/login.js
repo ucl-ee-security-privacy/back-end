@@ -1,7 +1,6 @@
 // Login Form
 $(function () {
     var button = $('#loginButton');
-    loginBox
     var box = $('#loginBox');
     var form = $('#loginForm');
     button.removeAttr('href');
@@ -27,13 +26,13 @@ document.getElementById('loginBtn').onclick = function () {
 // loginBtn.addEventListener("click", function() {
 //     window.location.href = "index.html";
     var input_username = document.getElementById("modlgn_username").value;
-    var input_password = document.getElementById("modlgn_password").value;
+    var input_password = document.getElementById("modlgn_passwd").value;
 
     // ajax提交用户名+密码到后台程序
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost:8080/login?username=" + input_username + "&password=" + input_password);
     xhr.setRequestHeader("Content-type", "url");
-    xhr.send("login?" + "username=\"" + input_username + "\"&password=" + input_password);
+    xhr.send("login?" + "username=" + input_username + "&password=" + input_password);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var res = xhr.responseText;
@@ -45,7 +44,7 @@ document.getElementById('loginBtn').onclick = function () {
                 $.cookie('userid', res.userid, {expires: 7, path: '/'});
                 window.location.href = "index.html";
             } else {
-                alert(res);
+                alert(res + "hahaha");
 
             }
         }
