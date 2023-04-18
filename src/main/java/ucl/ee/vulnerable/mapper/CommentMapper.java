@@ -1,7 +1,7 @@
-package ucl.ee.sec.mapper;
+package ucl.ee.vulnerable.mapper;
 
 import org.apache.ibatis.annotations.*;
-import ucl.ee.sec.entity.Comment;
+import ucl.ee.vulnerable.entity.Comment;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface CommentMapper {
 
-    @Insert("INSERT INTO webcomment VALUES ( null,${userid},${posttime},${content});")
+    @Insert("INSERT INTO webcomment VALUES ( null,#{userid},#{posttime},#{content});")
     int insertComment(Comment comment);
 
     @ResultType(Comment.class)

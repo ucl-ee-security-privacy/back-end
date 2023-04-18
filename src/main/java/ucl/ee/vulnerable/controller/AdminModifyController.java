@@ -1,11 +1,11 @@
-package ucl.ee.sec.controller;
+package ucl.ee.vulnerable.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import ucl.ee.sec.mapper.ProductMapper;
+import ucl.ee.vulnerable.mapper.ProductMapper;
 
 @Controller
 @Slf4j

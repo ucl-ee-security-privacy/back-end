@@ -1,16 +1,16 @@
-package ucl.ee.sec;
+package ucl.ee.vulnerable;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class SecApplication {
+public class VulnerableApplication {
 
     public static void main(String[] args) {
 
 
-        SpringApplication.run(SecApplication.class, args);
+        SpringApplication.run(VulnerableApplication.class, args);
     }
 
 }

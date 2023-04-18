@@ -1,26 +1,25 @@
-package ucl.ee.sec.controller;
-
+package ucl.ee.vulnerable.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import ucl.ee.sec.entity.User;
-import ucl.ee.sec.service.UserService;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import ucl.ee.vulnerable.entity.User;
+import ucl.ee.vulnerable.service.UserService;
 
 @Controller
 @Slf4j
-public class LoginController {
+public class AdminLoginController {
 
     @Autowired
     private UserService userService;
 
 
-    @GetMapping("/login")
+    @GetMapping("/admin_login")
     @ResponseBody
     public JSONObject login(@RequestParam(value = "username", required = true) String username,
                             @RequestParam(value = "password", required = true) String password,
@@ -49,16 +48,11 @@ public class LoginController {
         uidJSON.put("status", 1);
         User uidSession = (User) session.getAttribute("user");
         uidJSON.put("userid", uidSession.getUserid());
-        uidJSON.put("username", uidSession.getUsername());
-        uidJSON.put("nickname", uidSession.getNickname());
-        uidJSON.put("email", uidSession.getEmail());
-        uidJSON.put("birthday", uidSession.getBirthday());
-        uidJSON.put("phone", uidSession.getPhone());
         return uidJSON;
     }
 
 
-    @GetMapping("/logout")
+    @GetMapping("/admin_logout")
     @ResponseBody
     public String logout(HttpSession session) {
         //注销session（在服务器里删除该session）
@@ -68,3 +62,4 @@ public class LoginController {
 
 
 }
+

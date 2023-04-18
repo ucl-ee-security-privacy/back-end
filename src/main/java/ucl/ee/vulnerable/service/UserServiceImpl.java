@@ -1,14 +1,11 @@
-package ucl.ee.sec.service;
+package ucl.ee.vulnerable.service;
 
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ucl.ee.sec.entity.User;
-import ucl.ee.sec.mapper.UserMapper;
-
-import java.util.ArrayList;
-import java.util.List;
+import ucl.ee.vulnerable.entity.User;
+import ucl.ee.vulnerable.mapper.UserMapper;
 
 @Slf4j
 @Service

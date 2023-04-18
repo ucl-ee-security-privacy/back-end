@@ -1,13 +1,13 @@
-package ucl.ee.sec;
+package ucl.ee.vulnerable;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SecApplicationTests {
+class VulnerableApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
