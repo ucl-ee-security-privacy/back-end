@@ -49,6 +49,11 @@ public class LoginController {
         uidJSON.put("status", 1);
         User uidSession = (User) session.getAttribute("user");
         uidJSON.put("userid", uidSession.getUserid());
+        uidJSON.put("username", uidSession.getUsername());
+        uidJSON.put("nickname", uidSession.getNickname());
+        uidJSON.put("email", uidSession.getEmail());
+        uidJSON.put("birthday", uidSession.getBirthday());
+        uidJSON.put("phone", uidSession.getPhone());
         return uidJSON;
     }
 

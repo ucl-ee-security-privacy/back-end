@@ -9,8 +9,7 @@ import java.util.List;
 @Mapper
 public interface CommentMapper {
 
-    @Insert("INSERT INTO webcomment VALUES ( ${commentid},${userid},${posttime},${content});")
-    @Options(useGeneratedKeys = true, keyProperty = "commentid")
+    @Insert("INSERT INTO webcomment VALUES ( null,${userid},${posttime},${content});")
     int insertComment(Comment comment);
 
     @ResultType(Comment.class)

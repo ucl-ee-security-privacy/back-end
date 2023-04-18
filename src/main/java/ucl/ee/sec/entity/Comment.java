@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 public class Comment {
     private int id;
-    private int userId;
-    private Timestamp postTime;
+    private int userid;
+    private Timestamp posttime;
     private String content;
 }
