@@ -1,7 +1,7 @@
-package ucl.ee.sec.mapper;
+package ucl.ee.vulnerable.mapper;
 
 import org.apache.ibatis.annotations.*;
-import ucl.ee.sec.entity.User;
+import ucl.ee.vulnerable.entity.User;
 
 import java.util.List;
 

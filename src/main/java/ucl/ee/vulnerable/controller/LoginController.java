@@ -1,4 +1,4 @@
-package ucl.ee.sec.controller;
+package ucl.ee.vulnerable.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
@@ -7,10 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import ucl.ee.sec.entity.User;
-import ucl.ee.sec.service.UserService;
-
-import java.util.List;
+import ucl.ee.vulnerable.entity.User;
+import ucl.ee.vulnerable.service.UserService;
 
 @Controller
 @Slf4j
@@ -19,10 +17,6 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/login")
-    public String loginPage() {
-        return "login";
-    }
 
     @GetMapping("/login")
     @ResponseBody
@@ -53,6 +47,11 @@ public class LoginController {
         uidJSON.put("status", 1);
         User uidSession = (User) session.getAttribute("user");
         uidJSON.put("userid", uidSession.getUserid());
+        uidJSON.put("username", uidSession.getUsername());
+        uidJSON.put("nickname", uidSession.getNickname());
+        uidJSON.put("email", uidSession.getEmail());
+        uidJSON.put("birthday", uidSession.getBirthday());
+        uidJSON.put("phone", uidSession.getPhone());
         return uidJSON;
     }
 

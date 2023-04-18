@@ -1,4 +1,4 @@
-package ucl.ee.sec.controller;
+package ucl.ee.vulnerable.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import jakarta.servlet.http.HttpSession;
@@ -6,11 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import ucl.ee.sec.entity.User;
-import ucl.ee.sec.service.UserService;
+import ucl.ee.vulnerable.entity.User;
+import ucl.ee.vulnerable.service.UserService;
 
 @Controller
 @Slf4j
@@ -19,10 +18,6 @@ public class AdminLoginController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/admin_login")
-    public String loginPage() {
-        return "admin_login";
-    }
 
     @GetMapping("/admin_login")
     @ResponseBody

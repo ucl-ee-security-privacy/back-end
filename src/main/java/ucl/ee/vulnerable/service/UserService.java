@@ -1,7 +1,7 @@
-package ucl.ee.sec.service;
+package ucl.ee.vulnerable.service;
 
 
-import ucl.ee.sec.entity.User;
+import ucl.ee.vulnerable.entity.User;
 
 public interface UserService {
 
