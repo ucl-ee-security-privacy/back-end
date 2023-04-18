@@ -19,10 +19,6 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/login")
-    public String loginPage() {
-        return "login";
-    }
 
     @GetMapping("/login")
     @ResponseBody

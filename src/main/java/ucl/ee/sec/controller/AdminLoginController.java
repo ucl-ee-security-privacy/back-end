@@ -19,10 +19,6 @@ public class AdminLoginController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/admin_login")
-    public String loginPage() {
-        return "admin_login";
-    }
 
     @GetMapping("/admin_login")
     @ResponseBody

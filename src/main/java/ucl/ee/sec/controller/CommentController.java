@@ -47,10 +47,5 @@ public class CommentController {
         return 0;
     }
 
-    @RequestMapping("/comment")
-    public String commentPage() {
-        return "comment";
-    }
-
 
 }

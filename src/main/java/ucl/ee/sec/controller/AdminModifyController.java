@@ -14,10 +14,6 @@ public class AdminModifyController {
     @Autowired
     private ProductMapper productMapper;
 
-    @RequestMapping("admin_modify")
-    public String adminModifyPage() {
-        return "adminModify";
-    }
 
     @GetMapping("admin_modify")
     @ResponseBody
