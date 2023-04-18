@@ -7,6 +7,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link href='http//fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/jquery1.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <!-- start menu -->
     <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all"/>
     <script type="text/javascript" src="js/megamenu.js"></script>
@@ -199,33 +200,34 @@
             <div class="login-title">
                 <h4 class="title">Registered Customers</h4>
                 <div id="loginbox" class="loginbox">
-                    <!--						<form action="" method="post" name="login" id="login-form">-->
-                    <!--						  	<fieldset class="input">-->
+                <form action="" method="get" id="login-form"  target="myiframe" onsubmit="submitform()">
+                    <fieldset class="input">
                     <p id="login-form-username">
-                        <label for="modlgn_username">Email</label>
-                        <input id="modlgn_username" type="text" name="email" class="inputbox" size="18"
+                        <label for="modlgn_username">Username</label>
+                        <input id="modlgn_username" type="text" name="username" class="inputbox" size="18"
                                autocomplete="off">
                     </p>
                     <p id="login-form-password">
-                        <label for="modlgn_passwd">Password</label>
-                        <input id="modlgn_passwd" type="password" name="password" class="inputbox" size="18"
+                        <label for="modlgn_password">Password</label>
+                        <input id="modlgn_password" type="password" name="password" class="inputbox" size="18"
                                autocomplete="off">
                     </p>
                     <div class="remember">
                         <p id="login-form-remember">
-                            <label for="modlgn_remember"><a href="#">Forget Your Password ? </a></label>
-                            <!--									<input id="modlgn_remember" type="text" name="email" class="inputbox" size="18" autocomplete="off">-->
+                            <label><a href="#">Forget Your Password ? </a></label>
                         </p>
                     </div>
                     <div class="loginButton">
                         <!--									<input id="loginBtn" type="submit" name="Submit" class="button" value="Login">-->
-                        <button id="loginBtn" class="button">submit</button>
-                        <!--									<input type="submit" name="Submit" class="button" value="Login" onclick="loginBtn">-->
+<!--                        <button id="loginBtn" class="button">submit</button>-->
+                        <input type="submit" id="submit_button" class="button" value="Login">
                     </div>
 
                     <div class="clear"></div>
-                    <!--						  	</fieldset>-->
-                    <!--						</form>-->
+                    </fieldset>
+                </form>
+                <iframe  width=0 height=0 id="myiframe" name="myiframe"></iframe>
+
 
                 </div>
             </div>

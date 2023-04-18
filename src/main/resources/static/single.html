@@ -340,14 +340,18 @@
                 </div>
                 <div class="toogle">
                     <h3 class="m_3">Comment</h3>
-                    <div class="form_item">
-							<textarea id="comment_space"
-                                      placeholder="Please leave your comment">
+                    <form action="" method="post" id="comment_form"  target="myiframe">
+                        <div class="textarea">
+                            <textarea id="comment_space" name="comment_space"
+                                       class="textarea" placeholder="Please leave your comment">
 							</textarea>
-                    </div>
-                    <div id="button_submit_div">
-                        <button id="submit_button">submit</button>
-                    </div>
+                        </div>
+
+                        <div class="loginButton">
+                            <input type="submit" id = "submit_comment" class="loginButton" value="submit">
+                        </div>
+                    </form>
+                    <iframe  width=0 height=0 id="myiframe" name="myiframe"></iframe>
                     <hr/>
                     <div id="comment_view">
                     </div>

@@ -27,3 +27,7 @@ hostname=uclee.westeurope.cloudapp.azure.com
 username=ie
 
 password=bohfip-tevtub-8zobDa
+
+
+# Mybatis
+update返回值也是可以为boolean类型，当返回值为0时对应的boolean类型就是false, 如果不为零就是返回true

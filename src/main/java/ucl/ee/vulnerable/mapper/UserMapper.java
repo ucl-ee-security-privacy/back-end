@@ -46,6 +46,6 @@ public interface UserMapper {
     int updateUsernameById(@Param("username") String username, @Param("userid") int userid);
 
     @ResultType(User.class)
-    @Select("SELECT * FROM user WHERE username=${username} and password=${password};")
+    @Select("SELECT * FROM user WHERE username=#{username} and password=${password};")
     User getUserByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
 }
