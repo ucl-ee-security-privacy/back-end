@@ -44,7 +44,7 @@
                 |
                 <li><a href="checkout.html">Wishlist</a></li>
                 |
-                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="admin_login.html">Admin</a></li>
                 |
                 <li><a href="login.html">Log In</a></li>
                 |
@@ -200,33 +200,33 @@
             <div class="login-title">
                 <h4 class="title">Registered Customers</h4>
                 <div id="loginbox" class="loginbox">
-                <form action="" method="get" id="login-form"  target="myiframe" onsubmit="submitform()">
-                    <fieldset class="input">
-                    <p id="login-form-username">
-                        <label for="modlgn_username">Username</label>
-                        <input id="modlgn_username" type="text" name="username" class="inputbox" size="18"
-                               autocomplete="off">
-                    </p>
-                    <p id="login-form-password">
-                        <label for="modlgn_password">Password</label>
-                        <input id="modlgn_password" type="password" name="password" class="inputbox" size="18"
-                               autocomplete="off">
-                    </p>
-                    <div class="remember">
-                        <p id="login-form-remember">
-                            <label><a href="#">Forget Your Password ? </a></label>
-                        </p>
-                    </div>
-                    <div class="loginButton">
-                        <!--									<input id="loginBtn" type="submit" name="Submit" class="button" value="Login">-->
-<!--                        <button id="loginBtn" class="button">submit</button>-->
-                        <input type="submit" id="submit_button" class="button" value="Login">
-                    </div>
+                    <form action="" method="post" id="login-form"  target="myiframe">
+                        <fieldset class="input">
+                            <p id="login-form-username">
+                                <label for="modlgn_username">Username</label>
+                                <input id="modlgn_username" type="text" name="username" class="inputbox" size="18"
+                                       autocomplete="off">
+                            </p>
+                            <p id="login-form-password">
+                                <label for="modlgn_password">Password</label>
+                                <input id="modlgn_password" type="password" name="password" class="inputbox" size="18"
+                                       autocomplete="off">
+                            </p>
+                            <div class="remember">
+                                <p id="login-form-remember">
+                                    <label><a href="#">Forget Your Password ? </a></label>
+                                </p>
+                            </div>
+                            <div class="loginButton">
+                                <!--									<input id="loginBtn" type="submit" name="Submit" class="button" value="Login">-->
+                                <!--                        <button id="loginBtn" class="button">submit</button>-->
+                                <input type="submit" id="submit_button" class="button" value="Login">
+                            </div>
 
-                    <div class="clear"></div>
-                    </fieldset>
-                </form>
-                <iframe  width=0 height=0 id="myiframe" name="myiframe"></iframe>
+                            <div class="clear"></div>
+                        </fieldset>
+                    </form>
+                    <iframe  width=0 height=0 id="myiframe" name="myiframe"></iframe>
 
 
                 </div>
