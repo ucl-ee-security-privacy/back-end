@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 
 import java.util.List;
 
-@Controller
+@RestController
 @Slf4j
 public class CommentController {
 
@@ -22,7 +22,6 @@ public class CommentController {
     private CommentMapper commentMapper;
 
     @GetMapping("/comment/comment_list")
-    @ResponseBody
     public List<Comment> getCommentList(HttpSession session) {
         //检查是否登录（session是否存在）
         if (session.getAttribute("user") != null) {
@@ -33,7 +32,6 @@ public class CommentController {
 
 
     @PostMapping("/comment/submit")
-    @ResponseBody
     public int submitComment(@RequestParam("content") String submitContent, HttpSession session) {
         //检查是否登录（session是否存在）
         if (session.getAttribute("user") != null) {

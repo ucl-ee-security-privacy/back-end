@@ -5,9 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import ucl.ee.vulnerable.entity.Product;
 import ucl.ee.vulnerable.mapper.ProductMapper;
 
-@Controller
+@RestController
 @Slf4j
 public class AdminModifyController {
 
@@ -16,8 +17,9 @@ public class AdminModifyController {
 
 
     @GetMapping("admin_modify")
-    @ResponseBody
-    public JSONObject modifyProduct(@RequestParam("productid") int productId, @RequestParam("productnum") int productNum) {
+    public JSONObject modifyProduct(@RequestParam("productid") int productId, @RequestParam("changenum") int changeNum) {
+        Product product = productMapper.getProductById(productId);
+        int productNum = product.getProductnum() + changeNum;
         int result = productMapper.updateProductNumById(productId, productNum);
         JSONObject object = new JSONObject();
         object.put("status", result);
