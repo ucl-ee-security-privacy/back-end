@@ -8,16 +8,16 @@ var commentTree = {
     posttime: '',
     content: '',
 };
+
 window.onload = function (ev) {
     // the function will be called at first while page loads
     initTreeComment();
 };
 
-
 getCurrentTime = function () {
     var date = new Date();
     var year = date.getFullYear()
-    var month = date.getMonth()
+    var month = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1)
     var day = date.getDate()
     var hour = date.getHours()
     var min = date.getMinutes()
@@ -35,13 +35,17 @@ initTreeComment = function () {
         dataType: 'json',
         success: function (data) {
             if (data.length === 0) {
-
+                alert("no");
                 noComment(commentView)
             } else {
-                print(data);
+                alert("yes");
                 haveComment(commentView, data)
             }
+        },
+        error: function (){
+            alert("error")
         }
+
     });
 };
 
@@ -86,7 +90,7 @@ submitTree = function (textareaEle) {
         };
         alert(commentTree)
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "comment");
+        xhr.open("POST", "comment/submit");
         xhr.setRequestHeader("Content-type", "url");
         xhr.send(commentTree);
         xhr.onreadystatechange = function () {
@@ -99,9 +103,24 @@ submitTree = function (textareaEle) {
     }
 };
 
-document.getElementById('submit_button').onclick = function (textarea) {
+document.getElementById('submit_comment').onclick = function (textarea) {
     // window.location.href = "index.html";
     var commentSpace = document.getElementById('comment_space');
     // alert(commentSpace.value);
     submitTree(commentSpace);
 };
+
+
+$("#submit_comment").click(function () {
+    var domain = window.location.host;
+    document.getElementById("comment_form").action = "comment/submit"
+    $("#myiframe").one("load", function () {
+        var commentSpace = document.getElementById('comment_space');
+        // alert(commentSpace.value);
+        // submitTree(commentSpace);
+        var text = $(this).contents().find("body").text();
+        alert(text)
+        var text_json=JSON.parse(text)
+
+    })
+});
