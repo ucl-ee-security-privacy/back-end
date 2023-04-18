@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ucl.ee.vulnerable.mapper.ProductMapper;
 
-@Controller
+@RestController
 @Slf4j
 public class AdminModifyController {
 
@@ -16,7 +16,6 @@ public class AdminModifyController {
 
 
     @GetMapping("admin_modify")
-    @ResponseBody
     public JSONObject modifyProduct(@RequestParam("productid") int productId, @RequestParam("productnum") int productNum) {
         int result = productMapper.updateProductNumById(productId, productNum);
         JSONObject object = new JSONObject();

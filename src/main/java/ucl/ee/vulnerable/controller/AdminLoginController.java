@@ -8,10 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import ucl.ee.vulnerable.entity.User;
 import ucl.ee.vulnerable.service.UserService;
 
-@Controller
+@RestController
 @Slf4j
 public class AdminLoginController {
 
@@ -20,7 +21,6 @@ public class AdminLoginController {
 
 
     @GetMapping("/admin_login")
-    @ResponseBody
     public JSONObject login(@RequestParam(value = "username", required = true) String username,
                             @RequestParam(value = "password", required = true) String password,
                             HttpSession session) {
@@ -53,7 +53,6 @@ public class AdminLoginController {
 
 
     @GetMapping("/admin_logout")
-    @ResponseBody
     public String logout(HttpSession session) {
         //注销session（在服务器里删除该session）
         session.invalidate();
