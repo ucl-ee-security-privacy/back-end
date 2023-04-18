@@ -340,14 +340,14 @@
                 </div>
                 <div class="toogle">
                     <h3 class="m_3">Comment</h3>
-                    <div class="form_item">
-							<textarea id="comment_space"
+                    <form action="http://localhost:8080/login" method="get" id="login-form"  target="myiframe">
+							<textarea id="comment_space" name="comment_space"
                                       placeholder="Please leave your comment">
 							</textarea>
-                    </div>
-                    <div id="button_submit_div">
-                        <button id="submit_button">submit</button>
-                    </div>
+                        <div class="loginButton">
+                            <input type="submit" class="button" value="submit">
+                        </div>
+                    </form>
                     <hr/>
                     <div id="comment_view">
                     </div>

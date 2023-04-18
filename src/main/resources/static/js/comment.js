@@ -15,7 +15,15 @@ window.onload = function (ev) {
 
 
 getCurrentTime = function () {
-    return new Date().toLocaleString();
+    var date = new Date();
+    var year = date.getFullYear()
+    var month = date.getMonth()
+    var day = date.getDate()
+    var hour = date.getHours()
+    var min = date.getMinutes()
+    var sec = date.getSeconds()
+
+    return year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec
 };
 
 initTreeComment = function () {
@@ -27,8 +35,10 @@ initTreeComment = function () {
         dataType: 'json',
         success: function (data) {
             if (data.length === 0) {
+
                 noComment(commentView)
             } else {
+                print(data);
                 haveComment(commentView, data)
             }
         }
@@ -45,7 +55,7 @@ haveComment = function (commentView, arr) {
     commentView.style.textAlign = 'left';
 
     var htmlText = '';
-    arr.comment_list.forEach(function (value) {
+    arr["comment_list"].forEach(function (value) {
         htmlText +=
             '<ul id="' + value.commentid + '" class="comment_ulist" style="">' +
             '  <li class="comment_line_box" id="' + value.commentid + '">' +
@@ -61,6 +71,7 @@ haveComment = function (commentView, arr) {
         }
 
     });
+
     commentView.innerHTML = htmlText;
 };
 
@@ -68,21 +79,21 @@ haveComment = function (commentView, arr) {
 submitTree = function (textareaEle) {
     var commentView = document.getElementById('comment_view');
     var text = textareaEle.value;
-    var user_id = $.cookie('userid');
     if (text.length > 0) {
         commentTree = {
-            userid: user_id,
             posttime: getCurrentTime(),
             content: text,
         };
+        alert(commentTree)
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "registerRecv.php");
+        xhr.open("POST", "comment");
         xhr.setRequestHeader("Content-type", "url");
-        xhr.send("single/post" + commentTree);
+        xhr.send(commentTree);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 var res = xhr.responseText;
-                haveComment(commentView, JSON.parse(res))
+                var res_json=JSON.parse(res)
+                haveComment(commentView, res_json)
             }
         }
     }
@@ -91,5 +102,6 @@ submitTree = function (textareaEle) {
 document.getElementById('submit_button').onclick = function (textarea) {
     // window.location.href = "index.html";
     var commentSpace = document.getElementById('comment_space');
+    // alert(commentSpace.value);
     submitTree(commentSpace);
 };

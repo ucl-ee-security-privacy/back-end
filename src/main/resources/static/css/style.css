@@ -2631,14 +2631,14 @@ ul.delivery-list li a:hover {
 
 /*--comment--*/
 
-body, html {
-    background-color: rgb(0, 0, 0, 0.05);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-}
+/*body, html {*/
+/*    background-color: rgb(0, 0, 0, 0.05);*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
 
 dt, dd, dl {
     margin: 0;
@@ -2735,14 +2735,14 @@ main {
     cursor: pointer;
 }
 
-.menu {
-    margin: 0;
-    padding: 0;
-    background: white;
-    position: absolute;
-    width: 100%;
-    text-align: center
-}
+/*.menu {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    background: white;*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    text-align: center*/
+/*}*/
 
 input, textarea {
     border: solid 0.5px lightgray;
