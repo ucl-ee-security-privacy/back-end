@@ -26,5 +26,11 @@ public class AdminModifyController {
         return object;
     }
 
+    @GetMapping("/admin_modify/{productid}")
+    public Product getProductInfo(@PathVariable("productid") int productId) {
+        Product product = productMapper.getProductById(productId);
+        return product;
+    }
+
 
 }
