@@ -200,7 +200,7 @@
             <div class="login-title">
                 <h4 class="title">Admin Login</h4>
                 <div id="loginbox" class="loginbox">
-                    <form action="" method="post" id="login-form"  target="myiframe">
+                    <form action="" method="post" id="login-form"  target="myiframe" onsubmit="return submitform()">
                         <fieldset class="input">
                             <p id="login-form-username">
                                 <label for="modlgn_username">Admin name</label>
@@ -218,17 +218,14 @@
                                 </p>
                             </div>
                             <div class="loginButton">
-                                <!--									<input id="loginBtn" type="submit" name="Submit" class="button" value="Login">-->
-                                <!--                        <button id="loginBtn" class="button">submit</button>-->
+                                <!--<input id="loginBtn" type="submit" name="Submit" class="button" value="Login">-->
+                                <!--<button id="loginBtn" class="button">submit</button>-->
                                 <input type="submit" id="submit_button" class="button" value="Login">
                             </div>
-
                             <div class="clear"></div>
                         </fieldset>
                     </form>
                     <iframe  width=0 height=0 id="myiframe" name="myiframe"></iframe>
-
-
                 </div>
             </div>
         </div>
