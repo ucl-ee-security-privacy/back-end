@@ -37,8 +37,6 @@ showNum = function () {
             alert("error")
         }
     });
-
-
 }
 
 
@@ -50,9 +48,9 @@ document.getElementById('change').onclick = function () {
 
     // ajax提交用户名+密码到后台程序
     var xhr = new XMLHttpRequest();
-    xhr.open("get", "admin_modify/0/"+num);
+    xhr.open("get", "admin_modify?productid=0&changenum="+num);
     xhr.setRequestHeader("Content-type", "url");
-    xhr.send("admin_modify/0/"+num);
+    xhr.send("admin_modify?productid=0&changenum="+num);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var res = xhr.responseText;
