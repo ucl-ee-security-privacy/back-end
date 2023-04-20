@@ -29,8 +29,8 @@ public class RouteController {
         return "admin_login";
     }
 
-    @RequestMapping({"/", "index"})
-    public String indexPage() {
-        return "index";
-    }
+//    @RequestMapping({"/", "index"})
+//    public String indexPage() {
+//        return "index";
+//    }
 }
